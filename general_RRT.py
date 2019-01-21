@@ -13,7 +13,7 @@ show_animation = True
 
 # RRT class
 class RRT():
-    def __init__(self, start, goal, obstacleList,randArea, expandDis=1.0, goalSampleRate=5, maxIter=500):
+    def __init__(self, start, goal, obstacleList, expandDis=1.0, goalSampleRate=5, maxIter=500):
         #start:Start Position [x,y]    # node class
         #goal:Goal Position [x,y]
         #obstacleList:obstacle Positions [[x,y,size],...]
@@ -21,8 +21,7 @@ class RRT():
 
         self.start = Node(start[0], start[1])
         self.end = Node(goal[0], goal[1])
-        self.minrand = randArea[0]
-        self.maxrand = randArea[1]
+
         self.expandDis = expandDis
         self.goalSampleRate = goalSampleRate
         self.maxIter = maxIter
@@ -34,7 +33,7 @@ class RRT():
         while True:
             # Random Sampling
             if random.randint(0, 100) > self.goalSampleRate:
-                rnd = [random.uniform(self.minrand, self.maxrand), random.uniform(self.minrand, self.maxrand)]
+                rnd = [random.uniform(self.start.x, self.end.x), random.uniform(self.start.y, self.end.y)]
             else:
                 rnd = [self.end.x, self.end.y]
 
@@ -129,7 +128,7 @@ def main():
         (9, 5, 2)
     ]  # [x,y,size]
     # Set Initial parameters
-    rrt = RRT(start=[0, 0], goal=[5, 10],randArea=[-2, 15], obstacleList=obstacleList)
+    rrt = RRT(start=[0, 0], goal=[5, 10], obstacleList=obstacleList)
     path = rrt.Planning(animation=show_animation)
 
     # Draw final path

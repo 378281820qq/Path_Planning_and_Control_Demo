@@ -36,7 +36,7 @@ Control folder:
                          MPC can be formed as a standard formate
     
                          The solver using decent gradient method to choose control inputs and solve the MPC problem
-        
+ 
  
  
  5. A_star.py: g=f+h

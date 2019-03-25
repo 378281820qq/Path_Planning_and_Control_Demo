@@ -25,9 +25,9 @@ Control folder:
                                   
                                   convert s,d,ds/dt, dd/dt to x,y,dx/dt,dy/dt
                                   
-                                  send the next-time x,y,dx/dt,dy/dtx,y,dx/dt,dy/dt to low-level controller
+                                  send the next-time x,y,dx/dt,dy/dtx,y,dx/dt,dy/dt to low-level controller  
                                   
-    2. cubic_spline_planner: from points to generate a 3rd curve
+    2. cubic_spline_planner: from points to generate a 3rd curve  
  
  
  

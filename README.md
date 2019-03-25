@@ -39,7 +39,7 @@ Control folder:
  
  
  
- 5. A_star.py: g=f+h
+    5. A_star.py: g=f+h
 
 
 

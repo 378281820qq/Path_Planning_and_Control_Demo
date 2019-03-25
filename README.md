@@ -39,10 +39,13 @@ Control folder:
  
  
  
-5. A_star.py: g=f+h
+
 
 
 6.Dynamic_window_approach: another form of sampling controller,sampling in velocity and acceleration
  
 
 7.RRT: the sampling method
+
+
+5. A_star.py: g=f+h

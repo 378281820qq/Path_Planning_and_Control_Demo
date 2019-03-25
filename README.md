@@ -38,7 +38,9 @@ Control folder:
                          The solver using decent gradient method to choose control inputs and solve the MPC problem
         
  
-5. A_star.py: g=f+h
+ 
+ 5. A_star.py: g=f+h
+
 
 
  6.Dynamic_window_approach: another form of sampling controller,sampling in velocity and acceleration

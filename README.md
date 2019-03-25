@@ -30,12 +30,17 @@ Control folder:
     2. cubic_spline_planner: from points to generate a 3rd curve
  
  
+ 
  4.MPC_vehicle_control:  control a car's velcity and steering angle to reach a goal point
+ 
                          MPC can be formed as a standard formate
+    
                          The solver using decent gradient method to choose control inputs and solve the MPC problem
         
  5. A_star.py: g=f+h
 
+
  6.Dynamic_window_approach: another form of sampling controller,sampling in velocity and acceleration
+ 
 
  7.RRT: the sampling method

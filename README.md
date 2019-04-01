@@ -48,5 +48,4 @@ Control folder:
 7.RRT: the sampling method
 
 8.PRM(Probabilistic Roadmaps) 是一种基于图搜索的方法，一共分为两个步骤：学习阶段， 查询阶段     
-
            它将连续空间转换成离散空间，再利用A*等搜索算法在路线图上寻找路径，以提高搜索效率

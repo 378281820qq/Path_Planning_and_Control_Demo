@@ -43,7 +43,12 @@ Control folder:
 5.A_star.py, A_star.cpp: g=f+h
 
 6.Dynamic_window_approach: another form of sampling controller,sampling in velocity and acceleration
- 
+                            
+                            (1)在控制空间中离散采样多组速度dx,dy,dtheta
+                            (2)对每个采样的速度向量dx,dy,dtheta，模拟机器人在这种速度下，预测前进一个或者多个采样时间段机器的行走轨迹以及会发生什么。
+                            (3)对每个前进预测进行分析打分，choose the min cost path
+
+                             
 
 7.RRT: the sampling method
 

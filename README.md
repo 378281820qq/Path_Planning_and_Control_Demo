@@ -51,6 +51,40 @@ Control folder:
                              
 
 7.RRT: the sampling method
+    1.初始化起始点。比如设置机器人所在的位置为初始点；
+
+    2.随机生成目标点，遍历T，如果通过T能到达目标点，则路径搜索成功，扩展结束；否则继续扩展T；
+
+    3.挑选随机点到目标点最近的一个为Xnear;
+
+    4.沿着Xrand到Xnear的方向生长一段距离，生成一个新的节点Xnew;
+
+    5.判断Xnew进行碰撞检测，如果状态非法，则本次生长结束；否则，将新的状态添加到T；
+
+    6.返回树结构。   
+
+
+    function BuildRRT(qinit, K, Δq)
+    T.init(qinit)
+    for k = 1 to K
+        qrand = Sample()  -- chooses a random configuration
+        qnearest = Nearest(T, qrand) -- selects the node in the RRT tree that is closest to qrand
+        if  Distance(qnearest, qgoal) < Threshold then
+            return true
+        qnew = Extend(qnearest, qrand, Δq)  -- moving from qnearest an incremental distance in the direction of qrand
+        if qnew ≠ NULL then
+            T.AddNode(qnew)
+    return false
+
+
+    function Sample() -- Alternatively,one could replace Sample with SampleFree(by using a collision detection algorithm to reject samples in C_obstacle
+        p = Random(0, 1.0)
+        if 0 < p < Prob then
+            return qgoal
+        elseif Prob < p < 1.0 then
+            return RandomNode()
+       
+
 
 8.PRM(Probabilistic Roadmaps) 是一种基于图搜索的方法，一共分为两个步骤：学习阶段， 查询阶段     
            它将连续空间转换成离散空间，再利用A*等搜索算法在路线图上寻找路径，以提高搜索效率

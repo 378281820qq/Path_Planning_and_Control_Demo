@@ -42,6 +42,23 @@ Control folder:
 
 5.A_star.py, A_star.cpp: g=f+h
 
+
+        1、将开始点记录为当前点P
+
+        2、将当前点P放入封闭列表
+
+        3、搜寻点P所有邻近点，假如某邻近点既没有在开放列表或封闭列表里面，则计算出该邻近点的F值，并设父节点为P，然后将其放入开放列表
+
+        4、判断开放列表是否已经空了，如果没有说明在达到结束点前已经找完了所有可能的路径点，寻路失败，算法结束；否则继续。
+
+        5、从开放列表拿出一个F值最小的点，作为寻路路径的下一步。
+
+        6、判断该点是否为结束点，如果是，则寻路成功，算法结束；否则继续。
+
+        7、将该点设为当前点P，跳回步骤3。
+
+
+
 6.Dynamic_window_approach: another form of sampling controller,sampling in velocity and acceleration
                             
                             (1)在控制空间中离散采样多组速度dx,dy,dtheta
